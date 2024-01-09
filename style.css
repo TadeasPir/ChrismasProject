@@ -2,4 +2,18 @@
     display: flex;
     justify-content:center;
     list-style-type:none;
+    padding: 0 20px;
+    margin: 0 auto;
+    list-style: none;
+    text-align:center;
 }
+
+.circle {
+   
+    border-radius: 80px; 
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    margin: 6px;
+    cursor: pointer;
+   }

@@ -18,13 +18,7 @@ class RandomColor{
     }
    
     static generateFilledCircle(id,color)  {
-        let c = document.getElementById(id);
-        let ctx = c.getContext("2d");
-        ctx.beginPath();
-        ctx.arc(95, 50, 40, 0, 2 * Math.PI);
-        ctx.fillStyle = color;
-        ctx.fill();
-        ctx.stroke();
+        document.getElementById(id).style["background-color"] = color;
 
     }
 
@@ -46,14 +40,15 @@ class RandomColor{
 
     
        static gameLogic(color,rightColor,id){
-    
+       
+      
         if(color === rightColor){
             // TODO: implement the divs which will be shown 
-            document.getElementById("winner").style.display = "visible"
-            document.getElementById("restart").style.display = "visible"
+            document.getElementById("winner").style.display = 'block';
+            document.getElementById("restart").style.display = 'block';
         }else{
-            document.getElementById("ul_canvas").children[id].style.display = "hidden"
-            document.getElementById("testovac").style.display = "hidden"
+            document.getElementById("ul_canvas").children[id].style.display = "none"
+            
         }
     
         }
@@ -71,58 +66,59 @@ class RandomColor{
    document.getElementById("ColorGuesser").innerHTML = rightColor;
 
  //TODO: make buttons work
- canvas1 = document.getElementById("0");
+ circle1 = document.getElementById("0");
  
- canvas1.addEventListener("click",(e) =>
+ circle1.addEventListener("click",(e) =>
  {
     RandomColor.gameLogic(colors[0],rightColor,0);
-    console.log(colors[0]+" "+rightColor);
+    
  });
  
- console.log(canvas1);
- canvas2 = document.getElementById("0");
- canvas2.addEventListener("click",(e) =>
+ circle2 = document.getElementById("1");
+ circle2.addEventListener("click",(e) =>
  {
     RandomColor.gameLogic(colors[1],rightColor,1);
  });
-
-
-
- /*
-let color1 = new RandomColor();
-color1 = color1.generateRandomColor()
-let color2 = new RandomColor();
-color2 = color2.generateRandomColor()
-let color3 = new RandomColor();
-color3 = color3.generateRandomColor()
-let color5 = new RandomColor();
-color5 = color5.generateRandomColor()
-let color6 = new RandomColor();
-color6 = color6.generateRandomColor()
-let color7 = new RandomColor();
-color7 = color7.generateRandomColor()
-let color8 = new RandomColor();
-color8 = color8.generateRandomColor()
-*/
-
-
+ circle1 = document.getElementById("2");
+ 
+ circle1.addEventListener("click",(e) =>
+ {
+    RandomColor.gameLogic(colors[2],rightColor,2);
+    
+ });
+ 
+ circle3 = document.getElementById("3");
+ circle3.addEventListener("click",(e) =>
+ {
+    RandomColor.gameLogic(colors[3],rightColor,3);
+ });
+ circle3 = document.getElementById("4");
+ circle3.addEventListener("click",(e) =>
+ {
+    RandomColor.gameLogic(colors[4],rightColor,4);
+ });
+ circle5 = document.getElementById("5");
+ circle5.addEventListener("click",(e) =>
+ {
+    RandomColor.gameLogic(colors[5],rightColor,5);
+ });
+ circle3 = document.getElementById("6");
+ circle3.addEventListener("click",(e) =>
+ {
+    RandomColor.gameLogic(colors[6],rightColor,6);
+ });
+ circle3 = document.getElementById("7");
+ circle3.addEventListener("click",(e) =>
+ {
+    RandomColor.gameLogic(colors[7],rightColor,7);
+ });
+ circle3 = document.getElementById("8");
+ circle3.addEventListener("click",(e) =>
+ {
+    RandomColor.gameLogic(colors[8],rightColor,8);
+ });
 
 
 console.log(colors)
 
 
-
-
-/*
-RandomColor.generateFilledCircle("Canvas1",color1);
-
-RandomColor.generateFilledCircle("Canvas2",color2);
-RandomColor.generateFilledCircle("Canvas3",color3);
-RandomColor.generateFilledCircle("Canvas3",color4);
-RandomColor.generateFilledCircle("Canvas3",color5);
-RandomColor.generateFilledCircle("Canvas3",color6);
-RandomColor.generateFilledCircle("Canvas3",color7);
-RandomColor.generateFilledCircle("Canvas3",color8);
-
-document.getElementById("ul_canvas").children[0].style.display = "none"
-*/
