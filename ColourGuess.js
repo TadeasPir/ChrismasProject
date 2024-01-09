@@ -1,7 +1,11 @@
 class RandomColor{
+
+
     constructor(randomColor){
         this.randomColor = randomColor;
+   
     }
+    
     generateRandomColor(){
     let color = Math.floor(Math.random()*16777215).toString(16);
     if(color.length <= 6){
@@ -27,37 +31,64 @@ class RandomColor{
     static generateColorList(numOfColors){
         let color1 = new RandomColor();
         let array = [];
-        let index = 1; 
+        
         let canvas;
         for(let i = 0; i < numOfColors; i++){
         
-            array.push( color1.generateRandomColor());
-            RandomColor.generateFilledCircle("Canvas"+index,array[i]);
-            index++;
-            //TODO: make buttons work
-            canvas = document.getElementById("Canvas"+index);
-            canvas.addEventListener("click",);
-
+            array.push(color1.generateRandomColor());
+            RandomColor.generateFilledCircle(i,array[i]);
         }
        
-         let rightColor = array[Math.round(Math.random()*array.length)];
-         document.getElementById("ColorGuesser").innerHTML = rightColor;
-         gameLogic();
+        
+        
         return array;
     }
 
-    static gameLogic(color, canvasId){
+    
+       static gameLogic(color,rightColor,id){
+    
         if(color === rightColor){
-        // TODO: implement the divs which will be shown 
-            document.getElementById("ul_canvas").children[0].style.display = "none"
-            document.getElementById("ul_canvas").children[0].style.display = "none"
+            // TODO: implement the divs which will be shown 
+            document.getElementById("winner").style.display = "visible"
+            document.getElementById("restart").style.display = "visible"
         }else{
-            document.getElementById("ul_canvas").children[CanvasGradient].style.display = "hidden"
+            document.getElementById("ul_canvas").children[id].style.display = "hidden"
+            document.getElementById("testovac").style.display = "hidden"
         }
-    }
-}
+    
+        }
 
-/*
+    
+
+    }
+
+   
+
+    let colors = RandomColor.generateColorList(8); 
+
+   let rightColor = new RandomColor("")
+   rightColor = colors[Math.floor(Math.random()*colors.length)];
+   document.getElementById("ColorGuesser").innerHTML = rightColor;
+
+ //TODO: make buttons work
+ canvas1 = document.getElementById("0");
+ 
+ canvas1.addEventListener("click",(e) =>
+ {
+    RandomColor.gameLogic(colors[0],rightColor,0);
+    console.log(colors[0]+" "+rightColor);
+ });
+ 
+ console.log(canvas1);
+ canvas2 = document.getElementById("0");
+ canvas2.addEventListener("click",(e) =>
+ {
+    RandomColor.gameLogic(colors[1],rightColor,1);
+ });
+
+
+
+ /*
 let color1 = new RandomColor();
 color1 = color1.generateRandomColor()
 let color2 = new RandomColor();
@@ -75,7 +106,7 @@ color8 = color8.generateRandomColor()
 */
 
 
-let colors = RandomColor.generateColorList(8); 
+
 
 console.log(colors)
 
