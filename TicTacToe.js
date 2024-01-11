@@ -30,7 +30,7 @@ function createGrid(x) {
     let index = 0;
     for (var rows = 0; rows < x; rows++) {
         for (var columns = 0; columns < x; columns++) {0
-            $("#container").append("<div class='grid' id ="+index +" data-isColored=0" +"></div>");
+            $("#container").append("<div class='grid' id ="+index +"></div>");
             index++;
         };
     };
@@ -60,29 +60,41 @@ let currentPlayer = 'X'
 
 
 
-$(document).ready(function() {
+  
+  $(document).ready(function() {
     createGrid(20);
 
     
+    let divs = document.querySelectorAll('.grid');
 
-    $(".grid").click(function() {
+    divs.forEach(function(div) {
+        div.addEventListener('click', function() {
+            myDivObj = div
+            myId = div.id
+            console.log(myId);
+             console.log(myDivObj);
+             let myDivObjBgColor = window.getComputedStyle(myDivObj).backgroundColor;
+             let controlColor  = "rgb(0, 255, 255)";
+             let controlColor2 =  "rgb(128, 0, 128)";
+             console.log(myDivObjBgColor);
+               if(currentPlayer === 'X' &&   myDivObjBgColor !==   controlColor && myDivObjBgColor !== controlColor2){
+                   $(this).css("background-color", "purple");
+                   currentPlayer = 'O';
+              
        
-      myDivObj = document.getElementById( $(this).val());
-      console.log(myDivObj);
-      let myDivObjBgColor = window.getComputedStyle(myDivObj).backgroundColor;
-        if(currentPlayer === 'X' /* &&   myDivObjBgColor !==   $(this).css("background-color", "aliceblue") */ ){
-            $(this).css("background-color", "purple");
-            currentPlayer = 'O';
-            document.querySelector(".data-isColored").innerHTML = 1
-
-        }else
-        if(currentPlayer === 'O'){
-            $(this).css("background-color", "aqua");
-            currentPlayer = 'X';
-            document.querySelector(".data-isColored").innerHTML = 1
-
-        }
-                });
+               }else
+               if(currentPlayer === 'O'&&   myDivObjBgColor !==   controlColor && myDivObjBgColor !== controlColor2){
+                   $(this).css("background-color", "aqua");
+                   currentPlayer = 'X';
+                  
+       
+               }
+        });
+      });
+   /*  $(".grid").click(function(div) {
+       
+    
+                }); */
 
     $(".newGrid").click(function() {
         refreshGrid();
