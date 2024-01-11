@@ -30,7 +30,7 @@ function createGrid(x) {
     let index = 0;
     for (var rows = 0; rows < x; rows++) {
         for (var columns = 0; columns < x; columns++) {0
-            $("#container").append("<div class='grid' id ='index'></div>");
+            $("#container").append("<div class='grid' id ="+index +" data-isColored=0" +"></div>");
             index++;
         };
     };
@@ -51,23 +51,36 @@ function refreshGrid(){
     createGrid(z);
 };
 
+
 // create a 16x16 grid when the page loads
 // creates a hover effect that changes the color of a square to black when the mouse passes over it, leaving a (pixel) trail through the grid
 // allows the click of a button to prompt the user to create a new grid
 
 let currentPlayer = 'X'
 
+
+
 $(document).ready(function() {
     createGrid(20);
 
+    
+
     $(".grid").click(function() {
-        if(currentPlayer === 'X'  &&   $(this).css("background-color","blank") ==   $(this).css("background-color", "white")){
+       
+      myDivObj = document.getElementById( $(this).val());
+      console.log(myDivObj);
+      let myDivObjBgColor = window.getComputedStyle(myDivObj).backgroundColor;
+        if(currentPlayer === 'X' /* &&   myDivObjBgColor !==   $(this).css("background-color", "aliceblue") */ ){
             $(this).css("background-color", "purple");
             currentPlayer = 'O';
+            document.querySelector(".data-isColored").innerHTML = 1
+
         }else
         if(currentPlayer === 'O'){
             $(this).css("background-color", "aqua");
             currentPlayer = 'X';
+            document.querySelector(".data-isColored").innerHTML = 1
+
         }
                 });
 
