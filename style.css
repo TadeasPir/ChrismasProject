@@ -43,3 +43,8 @@
 body{
     align-items:center;
 }
+.difButtons{
+    display: inline-block;
+    display: flex;
+  
+}
