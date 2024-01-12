@@ -92,8 +92,8 @@ class RandomColor{
  {
     RandomColor.gameLogic(colors[3],rightColor,3);
  });
- circle3 = document.getElementById("4");
- circle3.addEventListener("click",(e) =>
+ circle4 = document.getElementById("4");
+ circle4.addEventListener("click",(e) =>
  {
     RandomColor.gameLogic(colors[4],rightColor,4);
  });
@@ -102,18 +102,18 @@ class RandomColor{
  {
     RandomColor.gameLogic(colors[5],rightColor,5);
  });
- circle3 = document.getElementById("6");
- circle3.addEventListener("click",(e) =>
+ circle6 = document.getElementById("6");
+ circle6.addEventListener("click",(e) =>
  {
     RandomColor.gameLogic(colors[6],rightColor,6);
  });
- circle3 = document.getElementById("7");
- circle3.addEventListener("click",(e) =>
+ circle7 = document.getElementById("7");
+ circle7.addEventListener("click",(e) =>
  {
     RandomColor.gameLogic(colors[7],rightColor,7);
  });
- circle3 = document.getElementById("8");
- circle3.addEventListener("click",(e) =>
+ circle8 = document.getElementById("8");
+ circle8.addEventListener("click",(e) =>
  {
     RandomColor.gameLogic(colors[8],rightColor,8);
  });
