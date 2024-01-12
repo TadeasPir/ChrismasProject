@@ -1,5 +1,4 @@
 
-//dodělat game logic budeme checkovat vsechny okolni id a pokud najdeme tak na nej skocime musime vyresit jak to crossnout na to najit nejakou datovou strukturu.
 
 function getColor(div){
 let color  = window.getComputedStyle(div).backgroundColor;
@@ -17,15 +16,6 @@ return -1;
 
 
 }
-
-/* let below = array[id-(-20)];
-    let above = array[id-20];
-    let right = array[id-(-1)];
-    let left  =  array[id-1];
-    let diagonalRightUp = array[id-19];
-    let diagonalLeftUp = array[id-21];
-    let diagonalRightBelow = array[id-(-19)];
-    let diagonbalLeftBelow = array[id-(-21)]; */
 
 
 

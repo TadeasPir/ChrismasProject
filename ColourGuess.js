@@ -44,7 +44,6 @@ class RandomColor{
       
      
        if(color === rightColor){
-           // TODO: implement the divs which will be shown 
            document.getElementById("winner").style.display = 'block';
            document.getElementById("restart").style.display = 'block';
            document.getElementById("wrong").style.display = 'none';
@@ -73,7 +72,7 @@ class RandomColor{
   document.getElementById("ColorGuesser").innerHTML = rightColor;
  
 
-//TODO: make buttons work
+
 circle1 = document.getElementById("0");
 
 circle1.addEventListener("click",(e) =>
