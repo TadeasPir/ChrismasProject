@@ -38,3 +38,8 @@
 	display:inline-block;
     background-color: aliceblue;
 }
+
+
+body{
+    align-items:center;
+}

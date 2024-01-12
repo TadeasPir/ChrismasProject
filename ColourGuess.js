@@ -46,8 +46,13 @@ class RandomColor{
             // TODO: implement the divs which will be shown 
             document.getElementById("winner").style.display = 'block';
             document.getElementById("restart").style.display = 'block';
+            document.getElementById("wrong").style.display = 'none';
+            $('#myModal').on('shown.bs.modal', function () {
+               $('#myInput').trigger('focus')
+             })
         }else{
             document.getElementById("ul_canvas").children[id].style.display = "none"
+            document.getElementById("wrong").style.display = 'block';
             
         }
     
@@ -64,6 +69,7 @@ class RandomColor{
    let rightColor = new RandomColor("")
    rightColor = colors[Math.floor(Math.random()*colors.length)];
    document.getElementById("ColorGuesser").innerHTML = rightColor;
+  
 
  //TODO: make buttons work
  circle1 = document.getElementById("0");

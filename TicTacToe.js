@@ -31,14 +31,14 @@ return -1;
 
         //Im using -- instead of + because its not working otherwise prolly beacuse of string :( 
 function gamelogic(array,id,inputColor){
-    let below = id-(-20);
-    let above = id-20;
-    let right = id-(-1);
-    let left  =  id-1;
-    let diagonalRightUp = id-19;
-    let diagonalLeftUp = id-21;
-    let diagonalRightBelow = id-(-19);
-    let diagonbalLeftBelow =id-(-21);
+    let below = array[id-(-20)];
+    let above = array[id-20];
+    let right = array[id-(-1)];
+    let left  =  array[id-1];
+    let diagonalRightUp = array[id-19];
+    let diagonalLeftUp = array[id-21];
+    let diagonalRightBelow = array[id-(-19)];
+    let diagonbalLeftBelow = array[id-(-21)];
     let controlDivsId = [right,left,above,below,diagonalRightUp,diagonalRightBelow,diagonbalLeftBelow,diagonalLeftUp];
     //console.log(controlDivs);
     currentId = id;
@@ -151,7 +151,7 @@ let currentPlayer = 'X'
 
        
                }
-             // gamelogic(array,myId,div.innerHTML);
+              gamelogic(array,myId,div.innerHTML);
              
         });
       });
